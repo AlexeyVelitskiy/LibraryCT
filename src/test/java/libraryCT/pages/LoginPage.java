@@ -1,5 +1,6 @@
 package libraryCT.pages;
 
+import libraryCT.utilities.BrowserUtilities;
 import libraryCT.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,9 +24,10 @@ public class LoginPage {
         return Driver.getDriver().getTitle();
     }
 
-    public void login(String userName, String password){
-        inputUserName.sendKeys(userName);
-        inputPassword.sendKeys(password);
+    public void login(String librarian, String librarianPassword){
+        inputUserName.sendKeys(librarian);
+        inputPassword.sendKeys(librarianPassword);
+        BrowserUtilities.waitFor(2);
         signInBtn.click();
     }
 
